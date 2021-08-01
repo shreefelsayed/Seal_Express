@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layoutDirection="ltr"
+    android:background="@color/background"
+    android:layout_height="match_parent"
+    tools:context=".DeniedReasons">
+
+    <include
+        android:id="@+id/addToolbar"
+        layout="@layout/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/addToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/addToolbar"
+        app:srcCompat="@drawable/ic_back_black"
+        app:tint="@color/orange" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bold_round_bg"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RadioGroup
+                    android:id="@+id/rdGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <RadioButton
+                        android:id="@+id/rd1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorAccent"
+                        android:buttonTint="@color/colorAccent"
+                        android:text="لا يرد علي الهاتف"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rd2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorAccent"
+                        android:buttonTint="@color/colorAccent"
+                        android:text="متهرب"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rd4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorAccent"
+                        android:buttonTint="@color/colorAccent"
+                        android:text="رفض استلام الشحنه"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rd3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/colorAccent"
+                        android:buttonTint="@color/colorAccent"
+                        android:text="سبب اخر"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/txtContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="top|right"
+                    android:hint="سبب رفض العميل للشحنه (اجباري)"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:maxLines="10"
+                    android:minLines="6"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorPrimary"
+                    android:visibility="gone"
+                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/chkRecive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:layoutDirection="rtl"
+                    android:text="استلام مصاريف الشحن"
+                    android:textSize="@dimen/_14sdp"
+                    android:visibility="visible" />
+
+                <CheckBox
+                    android:id="@+id/chkTry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:layoutDirection="rtl"
+                    android:text="محاوله تسليم"
+                    android:textSize="@dimen/_14sdp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tlRecivedMoney"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:hint="المبلغ المستلم"
+                android:textColorHint="@color/colorPrimary"
+                app:endIconMode="none"
+                app:errorEnabled="true"
+                app:errorTextAppearance="@style/error"
+                app:hintTextColor="@color/colorPrimary">
+
+                <EditText
+                    android:id="@+id/txtRecivedMoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_add_money"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:ems="10"
+                    android:fontFamily="@font/_markazi"
+                    android:inputType="number"
+                    android:text="0"
+                    android:nextFocusDown="@+id/txtWeight"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/_10sdp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_defult_square"
+                android:text="تسجيل كمرتجع"
+                android:textColor="@color/colorBack" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
