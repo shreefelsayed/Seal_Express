@@ -45,3 +45,9 @@ Sales :
 Customer Serive :
 - has access to read any of the shipments Data
 - has access to any of the clients data.
+
+Also Check :
+
+Seal Hubs : https://github.com/shreefelsayed/Seal-Hubs
+
+Seal Courier : https://github.com/shreefelsayed/Seal-Courier
